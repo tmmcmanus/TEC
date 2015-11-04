@@ -1,0 +1,19 @@
+function[L_normal,M_normal,N_normal,K_normal]=geometric_SFF(f11_central,f22_central,f12_central,h12_central_x,h12_central_y,norm_n,h11_central,h22_central,h12_central)
+Xuu=zeros(length(f11_central),3);
+Xvv=zeros(length(f11_central),3);
+Xuv=zeros(length(f11_central),3);
+Xu=zeros(length(f11_central),3);
+Xv=zeros(length(f11_central),3);
+Xu(:,1)=1; 
+Xv(:,2)=1;
+for n=1:length(f11_central)
+    Xuu(n,3)=f11_central(n);
+    Xvv(n,3)=f22_central(n);
+    Xuv(n,3)=f12_central(n);
+    Xu(n,3)=h12_central_x(n);
+    Xv(n,3)=h12_central_y(n);
+    L_normal(n) = dot(norm_n(n,:),Xuu(n,:));
+    M_normal(n) = dot(norm_n(n,:),Xuv(n,:));
+    N_normal(n) = dot(norm_n(n,:),Xvv(n,:));
+    K_normal(n)=(L_normal(n).*N_normal(n) - (M_normal(n)).^2)./(h11_central(n).*(h22_central(n)) - (h12_central(n)).^2);
+end
