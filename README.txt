@@ -6,6 +6,8 @@
    ╚═╝   ╚══════╝ ╚═════╝
                          
 
+Funding provided by the Engineering and Physical Science Research Council (EPSRC) Grant: EP/I034548/1 - The Quest for Ultimate Electromagnetics using Spatial Transformations (QUEST)
+
 TEC (Transformation Electromagnetics Code) solves for the material parameters called for by various transformation optics (TO)devices.
 There are two different source files found here thus far, along with a number of sample surfaces and sample volumes.  
 
